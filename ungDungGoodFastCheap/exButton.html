@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nút Bật/Tắt</title>
+  <link rel="stylesheet" href="exButton.css">
+</head>
+<body>
+<h3>GOOD</h3>
+<label class="input-toggle" >
+  <input class="nut1" type="checkbox" id="good" onclick="good()">
+  <span></span>
+</label>
+<br>
+<h3>CHEAP</h3>
+<label class="input-toggle" >
+  <input class="nut2" type="checkbox" id="cheap" onclick="cheap()">
+  <span></span>
+</label>
+<br>
+<h3>FAST</h3>
+<label class="input-toggle" >
+  <input class="nut3" type="checkbox" id="fast" onclick="fast()">
+  <span></span>
+</label>
+<script>
+  const checkboxA = document.getElementById("good");
+  const checkboxB = document.getElementById("cheap");
+  const checkboxC = document.getElementById("fast");
+  checkboxA.addEventListener("change", function() {
+    if (this.checked && checkboxB.checked) {
+      checkboxC.checked = false;
+    } else if (!this.checked && checkboxB.checked && checkboxC.checked) {
+      checkboxB.checked = false;
+      checkboxC.checked = false;
+    } else if (!this.checked && checkboxB.checked) {
+      checkboxC.checked = true;
+    }
+  });
+
+  checkboxB.addEventListener("change", function() {
+    if (this.checked && checkboxA.checked) {
+      checkboxC.checked = false;
+    } else if (!this.checked && checkboxA.checked && checkboxC.checked) {
+      checkboxA.checked = false;
+      checkboxC.checked = false;
+    } else if (!this.checked && checkboxA.checked) {
+      checkboxC.checked = true;
+    }
+  });
+
+  checkboxC.addEventListener("change", function() {
+    if (this.checked && checkboxA.checked && checkboxB.checked) {
+      checkboxB.checked = false;
+    } else if (!this.checked && checkboxB.checked) {
+      checkboxA.checked = false;
+    } else if (!this.checked && checkboxA.checked) {
+      checkboxB.checked = true;
+    }
+  });
+</script>
+</body>
+</html>

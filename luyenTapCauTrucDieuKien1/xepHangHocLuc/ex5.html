@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<label>Nhap so thi diem kiem tra<input type="number" id="kt"></label>
+<label>Nhap so thi diem giua ky<input type="number" id="gk"></label>
+<label>Nhap so thi diem cuoi ky<input type="number" id="ck"></label>
+<button onclick="submit()">kiem tra</button>
+<p id="result"></p>
+<script>
+  function submit() {
+    let a = +document.getElementById("kt").value
+    let b = +document.getElementById("gk").value
+    let c = +document.getElementById("ck").value
+    let tb = (a + b + c)/3;
+    if (10 >= tb && tb >= 8){
+        document.getElementById('result').innerHTML = "Hoc Sinh Loai Gioi";
+      }
+    else if(8 > tb && tb >= 6){
+        document.getElementById('result').innerHTML = "Hoc Sinh Loai Kha";
+      }
+    else if(6 > tb && tb >= 4){
+      document.getElementById('result').innerHTML = "Hoc Sinh Loai Trung Binh";
+    }
+    else if(4 > tb && tb >=0){
+      document.getElementById('result').innerHTML = "Hoc Sinh Loai Yeu";
+    }
+  }
+</script>
+</body>
+</html>

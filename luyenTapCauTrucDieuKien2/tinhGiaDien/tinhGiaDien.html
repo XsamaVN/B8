@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = +prompt("nhập số điện của bạn(kWh)")
+  let muc1 = 1678;
+  let muc2 = 1734;
+  let muc3 = 2014;
+  let muc4 = 2536;
+  let muc5 = 2834;
+  let muc6 = 2927;
+          // Bậc 1 (0 đến 50kWh): 1.678 VND/kWh.
+          // Bậc 2 (51 đến 100kWh): 1.734 VND/kWh.
+          // Bậc 3 (101 đến 200 kWh): 2.014 VND/kWh.
+          // Bậc 4 (201 đến 300 kWh): 2.536 VND/kWh.
+          // Bậc 5 (301 đến 400 kWh): 2.834 VND/kWh.
+          // Bậc 6 (401 kWh trở lên): 2.927 VND/kWh.
+  if(a>0){
+    if(a<=50){
+      alert('số tiền bạn cần trả:' + a*muc1 +'Đ')
+    }
+    else if(a<50 && a<=100){
+      alert('số tiền bạn cần trả:' +(50*muc1+(a-50)*muc2)  +'Đ')
+    }
+    else if(a<100 && a<=200){
+      alert('số tiền bạn cần trả:' +(50*(muc1+muc2)+(a-100)*muc3)  +'Đ')
+    }
+    else if(a<200 && a<=300){
+      alert('số tiền bạn cần trả:' +(50*(muc1+muc2)+100*muc3+(a-200)*muc4)  +'Đ')
+    }
+    else if(a<300 && a<=400){
+      alert('số tiền bạn cần trả:' +(50*(muc1+muc2)+100*(muc3+muc4)+(a-300)*muc5)  +'Đ')
+    }
+    else{
+      alert('số tiền bạn cần trả:' + (50*(muc1+muc2)+100*(muc3+muc4+muc5)+(a-400)*muc6)  + 'Đ');
+    }
+  }
+  else {
+    alert('nhap sai, hãy thao tác lại')
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Giai phuong trinh bac 1: ax + b = 0:</h1>
+<label>Nhap a<input type="text" id="soa"></label>
+<label>Nhap b<input type="text" id="sob"></label>
+<button onclick="cal()">Tinh toan</button>
+<p id="kq"></p>
+<script>
+    function cal() {
+        let a = +document.getElementById('soa').value;
+        let b = +document.getElementById('sob').value;
+        if (a == 0) {
+            if (b == 0) {
+                document.getElementById('kq').innerHTML = "phuong trinh co vo so nghiem";
+            } else {
+                document.getElementById('kq').innerHTML = "phuong trinh vo nghiem";
+            }
+        } else {
+            document.getElementById('kq').innerHTML = "phuong trinh co nghiem x =" + (-b / a);
+        }
+    }
+</script>
+
+</body>
+</html>

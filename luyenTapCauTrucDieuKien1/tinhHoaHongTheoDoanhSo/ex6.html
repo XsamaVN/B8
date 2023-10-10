@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tinh hoa hong nhan duoc dua theo doanh so ban hang</h1>
+<label>nhap doanh so cua ban<input type="text" id="doanhso"></label>
+<button onclick="cal()">TinhToan</button>
+<p id="result"></p>
+<script>
+  function cal() {
+    let a = +document.getElementById('doanhso').value
+    if (a >= 5000000){
+      document.getElementById('result').innerHTML = 'hoa hong cua ban la:(5%)' + (a*5/100);
+    if (a >= 10000000){
+      document.getElementById('result').innerHTML = 'hoa hong cua ban la:(10%)' + (a*10/100);
+    }}
+    else{
+      document.getElementById('result').innerHTML = 'ban khong nhan duoc tien hoa hong'
+    }
+  }
+</script>
+
+</body>
+</html>

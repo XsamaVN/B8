@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>giai phuong trinh bac 2: ax<sup>2</sup>+bx+c=0</h1>
+<p>nhap a</p>
+<input type="text" id="soa">
+<p>nhap b</p>
+<input type="text" id="sob">
+<p>nhap c</p>
+<input type="text" id="soc">
+<button onclick="cal()">tinhtoan</button>
+<p id='ketqua'></p>
+
+<script>
+    function cal() {
+        let a = +document.getElementById('soa').value;
+        let b = +document.getElementById('sob').value;
+        let c = +document.getElementById('soc').value;
+        let delta = b**2 - 4*a*c;
+        if (delta < 0) {
+            document.getElementById('ketqua').innerHTML = 'phuong trinh vo nghiem';
+        } else if (delta == 0) {
+            document.getElementById('ketqua').innerHTML = 'phuong trinh co 1 nghiem duy nhat la:   x=' + -b/(2*a);
+        }
+        else{
+            document.getElementById('ketqua').innerHTML = 'phuong trinh co 2 nghiem:' +"<br>" + 'x1=' + (-b+Math.sqrt(delta))/(2*a) + "<br>" + 'x2=' + (-b-Math. sqrt(delta))/(2*a);
+        }
+    }
+</script>
+
+</body>
+</html>

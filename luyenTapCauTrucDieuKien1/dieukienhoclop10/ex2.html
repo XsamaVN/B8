@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhap so tuoi cua hoc sinh<input type="number" id="tuoi"></label>
+<button onclick="submit()">kiem tra</button>
+<p id="result"></p>
+<script>
+    function submit() {
+        let t = +document.getElementById("tuoi").value
+        if (t > 0) {
+            if (t >= 15) {
+                document.getElementById('result').innerHTML = "Du tuoi de vao hoc lop 10";
+            } else {
+                document.getElementById('result').innerHTML = "chua du tuoi hoc lop 10";
+            }
+        }
+        else {
+            document.getElementById('result').innerHTML = "chua de thi hoc sao?";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhap so nguyen<input type="number" id="songuyen"></label>
+<button onclick="submit()">kiem tra</button>
+<p id="result"></p>
+<script>
+  function submit() {
+    let t = +document.getElementById("songuyen").value
+    if (t > 0) {
+      document.getElementById('result').innerHTML = "so nguyen lon hon 0";
+    }
+    else if (t == 0) {
+      document.getElementById('result').innerHTML = "so nguyen bang 0";
+    }
+    else {
+      document.getElementById('result').innerHTML = "so nguyen nho hon 0";
+    }
+  }
+</script>
+</body>
+</html>
